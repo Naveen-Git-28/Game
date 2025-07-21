@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+</head>
+
+<body id="body">
+
+    <div class="container">
+        <h1>GUESS THE NUMBER 1 TO 10</h1>
+        <input id="number" type="number" placeholder="Enter a number">
+        <button onclick="check()">Check</button>
+        <p id="result">You are Wrong/Right</p>
+        <p id="score">Score : 10</p>
+    </div>
+
+    <script>
+        var ranint = Math.ceil(Math.random() * 10);
+        var score = 10;
+        var ans = document.getElementById("score");
+        console.log("Random Number:", ranint);
+
+        function check() {
+            let a = Number(document.getElementById("number").value);
+            let b = document.getElementById("result");
+
+            if (ranint === a) {
+                localStorage.setItem("score", score); // Save score
+                window.location.href = "win.html";
+            }
+            else if (a < ranint) {
+                score -= 1;
+                ans.textContent = "Score : " + score;
+                b.textContent = "❌ Wrong answer, please try again!";
+                b.style.color = "red";
+
+                let body = document.getElementsByClassName("container")[0];
+
+                if (score === 10) body.style.backgroundColor = "rgb(0, 200, 0)";
+                else if (score === 9) body.style.backgroundColor = "rgb(50, 180, 0)";
+                else if (score === 8) body.style.backgroundColor = "rgb(100, 160, 0)";
+                else if (score === 7) body.style.backgroundColor = "rgb(150, 140, 0)";
+                else if (score === 6) body.style.backgroundColor = "rgb(200, 120, 0)";
+                else if (score === 5) body.style.backgroundColor = "rgb(220, 100, 0)";
+                else if (score === 4) body.style.backgroundColor = "rgb(240, 80, 0)";
+                else if (score === 3) body.style.backgroundColor = "rgb(250, 60, 0)";
+                else if (score === 2) body.style.backgroundColor = "rgb(255, 40, 0)";
+                else if (score === 1) body.style.backgroundColor = "rgb(255, 0, 0)";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

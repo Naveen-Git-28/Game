@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎉 You Won!</title>
+    <link rel="stylesheet" href="win.css">
+</head>
+<body>
+    <script>
+        var score = localStorage.getItem("score"); // Get score
+        document.addEventListener("DOMContentLoaded", function () {
+        const scoreElement = document.createElement("h1");
+        scoreElement.className = "animated-text";
+        scoreElement.textContent = "Your Score: " + score;
+
+        const container = document.querySelector(".winner-container");
+        container.insertBefore(scoreElement, container.querySelector("button"));
+        });
+    </script>
+
+    <div class="winner-container">
+        <h1 class="animated-text">🎉 Congratulations! 🎉</h1>
+        <p class="subtext">You guessed the number correctly!</p>
+        
+        <button onclick="window.location.href='index.html'">Play Again</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(120deg, #84fab0, #8fd3f4);
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 360px;
+    transition: all 0.4s ease;
+}
+
+h1 {
+    color: #4b0082;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+input {
+    width: 80%;
+    height: 45px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #8e44ad;
+    border-radius: 12px;
+    font-size: 18px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+}
+
+button {
+    width: 85%;
+    height: 45px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #5f0fce, #1a73e8);
+}
+
+#result {
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#score {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+    transition: 0.3s;
+}
+
+
+/* Animation keyframes */
+@keyframes popFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) rotate(-10deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.win-animation {
+    animation: popFade 0.8s ease;
+    color: #28a745 !important; /* green shade */
+}
